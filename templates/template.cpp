@@ -2,8 +2,9 @@
 
 using namespace std;
 
-#define OS ios_base::sync_with_stdio(false) cin.tie(nullptr);
+#define OS ios_base::sync_with_stdio(false); cin.tie(nullptr);
 #define ar array
+#define str string
 #define ll long long
 #define ld long double
 #define sza(x) ((int)x.size())
@@ -12,6 +13,7 @@ using namespace std;
 #define b second
 
 void solve() {
+    
 }
 
 int main() {
