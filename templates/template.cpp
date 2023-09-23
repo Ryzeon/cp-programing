@@ -2,6 +2,7 @@
 
 using namespace std;
 
+#define OS ios_base::sync_with_stdio(false) cin.tie(nullptr);
 #define ar array
 #define ll long long
 #define ld long double
@@ -14,6 +15,7 @@ void solve() {
 }
 
 int main() {
+    OS;
     int n = 1;
    // cin >> n;
     
