@@ -22,23 +22,16 @@ void solve() {
         a.push_back({x, i + 1});
     }
     int next = 0;
-    while(!a.empty()) {  
+    while(a.size() > 1) {  
         // n = 4
         // vector = [8, 2, 4. 2]
         // el 0 dice que se recorrar 8 turnos
         int call = a[next].a; // 8
-        int mod = (call % a.size());
-        int choose = (mod == 0 ? (a.size() - 1) : (mod - 1));
-        if (a.size() == 2) {
-            //   cout << "next: " << next << endl;
-            cout << a[choose].b << endl;
-            break;
-        }
+        int n = a.size();
+        int choose = ((call + next-1) % n + n)%n; // se jhace esto para que n no sobre pase, proeso se suma el + n yu se vuelkve a sacaer modulo
         //    cout << "choose: " << choose << endl;
        
                 //    cout << "choose: " << choose << endl;
-
-        next = choose + 1 > a.size() - 1 ? 0 : choose + 1;
 
      
 
@@ -49,6 +42,7 @@ void solve() {
         // cout << endl;
 
         a.erase(a.begin() + choose);
+        next = choose%a.size();
 
 
         // cout << "call: " << call << endl;
@@ -64,7 +58,8 @@ void solve() {
         // cout << endl;
 
         // cout << "----" << endl;
-    } 
+    }
+    cout << a[0].b << endl;
 }
 
 int main() {

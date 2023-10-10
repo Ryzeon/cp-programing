@@ -1,0 +1,20 @@
+
+
+    ll maxoncez, totaldrink;
+    cin >> maxoncez >> totaldrink;
+
+    ll combinations = 0;
+    ll c = 1;
+    while (c <= maxoncez) {
+        if (c * maxoncez < totaldrink) c++; continue;
+        
+        if (c * maxoncez == totaldrink) {
+            combinations++;
+            c++;
+            continue;
+        }
+
+        c++;
+    }
+
+    cout << combinations << endl;
