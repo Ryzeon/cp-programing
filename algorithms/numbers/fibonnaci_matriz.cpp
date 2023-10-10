@@ -6,14 +6,15 @@ using namespace std;
 #define ar array
 #define str string
 #define ll long long
-#define ld long double
 #define ull unsigned long long
+#define ld long double
 #define sza(x) ((int)x.size())
 #define all(a) (a).begin(), (a).end()
 #define fori(i, n) for (int i = 0; i < (int)(n); ++i)
 #define rfori(i, n) for (int i = (int)(n) - 1; i >= 0; --i)
 #define a first
 #define b second
+
 const int MAX_N = 1e5 + 5;
 const ll MOD = 1e9 + 7;
 const ll INF = 1e9;
@@ -89,25 +90,14 @@ template <class T> struct matrix {
 
 using mint = Modular<MOD>;
 
-void solve() {
-    ull n;
-    cin >> n;
+// usage
+
+ull fib(ull n) {
     matrix<mint> A(1, 2, 0); 
     A.m[0][0] = 0; A.m[0][1] = 1;
     matrix<mint> B(2, 2, 0);
     B.m[0][0] = 0; B.m[0][1] = 1;
     B.m[1][0] = 1; B.m[1][1] = 1;
     A = A * (B ^ n);
-    cout << A.m[0][0].v << "\n";
-}
-
-int main() {
-    OS;
-    int n = 1;
-   // cin >> n;
-    
-    while (n--) {
-        solve();
-    }
-    return 0;
+    return A.m[0][0].v;
 }

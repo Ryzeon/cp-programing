@@ -9,6 +9,8 @@ using namespace std;
 #define ld long double
 #define sza(x) ((int)x.size())
 #define all(a) (a).begin(), (a).end()
+#define fori(i, n) for (int i = 0; i < (int)(n); ++i)
+#define rfori(i, n) for (int i = (int)(n) - 1; i >= 0; --i)
 #define a first
 #define b second
 
