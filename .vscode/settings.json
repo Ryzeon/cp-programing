@@ -74,6 +74,19 @@
         "typeindex": "cpp",
         "typeinfo": "cpp",
         "variant": "cpp",
+<<<<<<< Updated upstream
         "gatos": "cpp"
+=======
+        "queue": "cpp",
+        "__node_handle": "cpp",
+        "__split_buffer": "cpp",
+        "stack": "cpp",
+        "filesystem": "cpp",
+        "__locale": "cpp",
+        "ios": "cpp",
+        "__bit_reference": "cpp",
+        "__hash_table": "cpp",
+        "__tree": "cpp"
+>>>>>>> Stashed changes
     }
 }
