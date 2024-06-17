@@ -7,47 +7,34 @@ using namespace std;
 #define str string
 #define ll long long
 #define ld long double
-#define ppi pair<int, int>
 #define sza(x) ((int)x.size())
 #define all(a) (a).begin(), (a).end()
 #define fori(n) for (int i = 0; i < (int)(n); ++i)
 #define forj(n) for (int j = 0; j < (int)(n); ++j)
-#define forsj(s, n) for (int j = s; j < (int)(n); ++j)
 
 #define rfori(n) for (int i = (int)(n) - 1; i >= 0; --i)
-// #define a first
-// #define b second
+#define a first
+#define b second
+
+void solve_arr(vector<int> &arr, int n) {
+    vector<int> a(n);
+    
+}
 
 void solve() {
-    int a, h, w;
-    cin >>  a >> h >> w;
-    fori(a) {
-        char a, b;
-        cin >> a >> b;
-        if (a == 'Y' || w == 0) {
-            cout<< "Y ";
-            h--;
-            w++;
-        } else {
-            cout << "N ";
-        }
-
-        if (b == 'Y' || h == 0) {
-            cout<< "Y\n";
-            w--;
-            h++;
-        } else {
-            cout << "N\n";
-        }
+    int n;
+    while (n != 0 || (cin >> n)) {
+        vector<int> arr(n);
+        for(int &a : arr) cin >> a;
+        solve_arr(arr, n);
     }
-
 }
 
 int main() {
     OS;
     int n = 1;
 
-  // cin >> n;
+   cin >> n;
 //    cin.ignore();
     
     while (n--) {
