@@ -17,7 +17,6 @@ using namespace std;
 #define rfori(n) for (int i = (int)(n) - 1; i >= 0; --i)
 // #define a first
 // #define b second
-
 void solve() {
     int a, h, w;
     cin >>  a >> h >> w;

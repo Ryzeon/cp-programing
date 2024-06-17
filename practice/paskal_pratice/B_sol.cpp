@@ -2,6 +2,8 @@
 
 using namespace std;
 
+
+
 #define OS ios_base::sync_with_stdio(false); cin.tie(nullptr);
 #define rfori(n) for (int i = n - 1; i >= 0; i--)
 #define fori(n) for (int i = 0; i < n; i++)
@@ -9,11 +11,9 @@ using namespace std;
 #define str string
 #define ll long long
 #define ld long double
-#define sza(x) ((int)x.size())
-#define all(a) (a).begin(), (a).end()
-#define a first
+#define sza(x) ((int)x.size()define sza(x) ((int)x.size())define sza(x) ((int)x.size())define sza(x) ((int)x.size())define sza(x) ((int)x.size())define sza(x) ((int)x.size())define sza(x) ((int)x.size())https://chatgpt.com/c/6bf8db31-1c6b-4539-ad5a-d30d635c8bcf#define a first
 #define b second
-
+https://chatgpt.com/c/6bf8db31-1c6b-4539-ad5a-d30d635c8bcf
 void solve() {
     int n;
     cin >> n;

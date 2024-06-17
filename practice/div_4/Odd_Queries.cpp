@@ -32,16 +32,18 @@ void solve() {
         }
     }
     
+    // ni idea pero asca se supoen que debo coder??? xdf
 
     while (q--) {
         ll l ,r, k;
         cin >> l >> r >> k;
-        // aca obtengo la suma de valores desde l hasta r
+       // entonce aca me pongo as programarwaiu xd // aca obtengo la suma de valores desde l hasta r
         ll sumrange = stre[r - 1] - (l == 1 ? 0 : stre[l - 2]);
         ll add = k * (l - r + 1); // aca por lo que voy a sumar 
         // finalmente obtengo la suma total le resto lo que le voy a quitrar y sumo lo que le voy a agregar
         cout << ((stre[n - 1] - sumrange + add) % 2 != 0 ? "YES" : "NO") << endl; // segmenyt tree
-    }
+    
+}
 }
 
 int main() {
