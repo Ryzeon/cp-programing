@@ -11,8 +11,8 @@ using namespace std;
 #define all(a) (a).begin(), (a).end()
 #define fori(n) for (int i = 0; i < (int)(n); ++i)
 #define rfori(n) for (int i = (int)(n) - 1; i >= 0; --i)
-#define a first
-#define b second
+// #define a first
+// #define b second
 
 void solve() {
     
