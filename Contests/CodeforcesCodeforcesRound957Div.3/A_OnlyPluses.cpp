@@ -1,4 +1,7 @@
+// time-limit: 1000
+// problem-url: https://codeforces.com/contest/1992/problem/A
 #include <bits/stdc++.h>
+#include <utility>
 
 using namespace std;
 
@@ -17,7 +20,8 @@ using namespace std;
 #define coutc "\033[48;5;196m\033[38;5;15m"
 #define endc "\033[0m"
 #define len(x) int((x).size())
-using pii = pair<int, int>; using li = long long int;
+using pii = pair<int, int>;
+using li = long long int;
 using ld = long double; // using lli = __int128_t;
 #define endl '\n'
 
@@ -54,12 +58,40 @@ void debug(const auto &e, const auto &...r) {
 #define debug(...)
 #endif
 
-void solve() {}
+void solve() {
+  int a, b, c;
+  cin >> a >> b >> c;
+  int cc = a * b * c;
+
+  if (b < a) {
+    swap(a, b);
+  }
+
+  if (c < b) {
+    swap(c, b);
+  }
+
+  // cout << a << b << c << endl;
+
+  fori(5) {
+    if (a + 1 <= b) {
+      a++;
+    } else if (b + 1 <= c) {
+      b++;
+    } else {
+      c++;
+    }
+    // cout << a << b << c << endl;
+    cc = max(cc, a * b * c);
+  }
+
+  cout << cc << endl;
+}
 
 int main() {
   OS;
   int n = 1;
-  // cin >> n;
+  cin >> n;
 
   while (n--) {
     solve();

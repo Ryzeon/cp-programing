@@ -1,3 +1,5 @@
+// time-limit: 2000
+// problem-url: https://vjudge.net/problem/AtCoder-arc087_a
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -17,7 +19,8 @@ using namespace std;
 #define coutc "\033[48;5;196m\033[38;5;15m"
 #define endc "\033[0m"
 #define len(x) int((x).size())
-using pii = pair<int, int>; using li = long long int;
+using pii = pair<int, int>;
+using li = long long int;
 using ld = long double; // using lli = __int128_t;
 #define endl '\n'
 
@@ -54,7 +57,28 @@ void debug(const auto &e, const auto &...r) {
 #define debug(...)
 #endif
 
-void solve() {}
+#define a first
+#define b second
+
+void solve() {
+  ll n;
+  cin >> n;
+  map<ll, ll> mp;
+  fori(n) {
+    ll x;
+    cin >> x;
+    mp[x]++;
+  }
+  ll cc = 0;
+  for (auto p : mp) {
+    if (p.b < p.a) {
+      cc += p.b;
+    } else {
+      cc += (p.b - p.a);
+    }
+  }
+  cout << cc << endl;
+}
 
 int main() {
   OS;

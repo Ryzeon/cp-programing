@@ -1,3 +1,6 @@
+// time-limit: 2000
+// problem-url: https://codeforces.com/contest/1992/problem/B
+#include <algorithm>
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -17,7 +20,8 @@ using namespace std;
 #define coutc "\033[48;5;196m\033[38;5;15m"
 #define endc "\033[0m"
 #define len(x) int((x).size())
-using pii = pair<int, int>; using li = long long int;
+using pii = pair<int, int>;
+using li = long long int;
 using ld = long double; // using lli = __int128_t;
 #define endl '\n'
 
@@ -54,12 +58,25 @@ void debug(const auto &e, const auto &...r) {
 #define debug(...)
 #endif
 
-void solve() {}
+void solve() {
+  int n, k;
+  cin >> n >> k;
+  vector<int> arr(k);
+  for (int &a : arr)
+    cin >> a;
+
+  sort(arr.begin(), arr.end());
+  int cc= 0;
+  for (int i = 0;i < k - 1; i++) {
+    cc += arr[i] * 2 - 1;
+  }
+  cout << cc << endl; 
+}
 
 int main() {
   OS;
   int n = 1;
-  // cin >> n;
+  cin >> n;
 
   while (n--) {
     solve();

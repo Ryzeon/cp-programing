@@ -1,3 +1,6 @@
+// time-limit: 2000
+// problem-url: https://vjudge.net/problem/CodeForces-1324D
+#include <algorithm>
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -17,7 +20,8 @@ using namespace std;
 #define coutc "\033[48;5;196m\033[38;5;15m"
 #define endc "\033[0m"
 #define len(x) int((x).size())
-using pii = pair<int, int>; using li = long long int;
+using pii = pair<int, int>;
+using li = long long int;
 using ld = long double; // using lli = __int128_t;
 #define endl '\n'
 
@@ -54,9 +58,35 @@ void debug(const auto &e, const auto &...r) {
 #define debug(...)
 #endif
 
-void solve() {}
+#define int long long
 
-int main() {
+void solve() {
+  int n;
+  cin >> n;
+  vector<int> a(n), b(n), diff(n);
+  for (int &x : a)
+    cin >> x;
+  for (int &x : b)
+    cin >> x;
+
+  fori(n) { diff[i] = a[i] - b[i]; }
+  sort(diff.begin(), diff.end());
+
+  int cc = 0;
+  int i = 0;
+  int j = n - 1;
+  while (i < j) {
+    if (diff[i] + diff[j] > 0) {
+      cc += j - i; // amount of pairs, valid;
+      j--;
+    } else {
+      i++;
+    }
+  }
+  cout << cc << endl;
+}
+
+int32_t main() {
   OS;
   int n = 1;
   // cin >> n;

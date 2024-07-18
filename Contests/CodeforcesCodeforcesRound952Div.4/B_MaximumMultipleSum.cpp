@@ -1,4 +1,7 @@
+// time-limit: 1000
+// problem-url: https://codeforces.com/contest/1985/problem/B
 #include <bits/stdc++.h>
+#include <vector>
 
 using namespace std;
 
@@ -8,18 +11,13 @@ using namespace std;
 #define ar array
 #define str string
 #define ll long long
+#define ld long double
 #define sza(x) ((int)x.size())
 #define all(a) (a).begin(), (a).end()
 #define fori(n) for (int i = 0; i < (int)(n); ++i)
 #define rfori(n) for (int i = (int)(n) - 1; i >= 0; --i)
 #define forj(n) for (int j = 0; j < (int)(n); ++j)
 #define forsj(s, n) for (int j = s; j < (int)(n); ++j)
-#define coutc "\033[48;5;196m\033[38;5;15m"
-#define endc "\033[0m"
-#define len(x) int((x).size())
-using pii = pair<int, int>; using li = long long int;
-using ld = long double; // using lli = __int128_t;
-#define endl '\n'
 
 #define fi first
 #define se second
@@ -54,12 +52,44 @@ void debug(const auto &e, const auto &...r) {
 #define debug(...)
 #endif
 
-void solve() {}
+void fillPrefixSum(vector<int> arr, int n, int prefixSum[]) {
+  prefixSum[0] = arr[0];
+  // Adding present element with previous element
+  for (int i = 1; i < n; i++)
+    prefixSum[i] = prefixSum[i - 1] + arr[i];
+}
+
+void solve() {
+  int n;
+  cin >> n;
+  int prefixSum[n];
+  vector<int> arr(n);
+  for (int &a : arr)
+    cin >> a;
+
+  fillPrefixSum(arr, n, prefixSum);
+
+  int cc = 0;
+  if (n < 3) {
+    cout << n << endl;
+    return;
+  }
+  fori(n) {
+    if (i == 0)
+      continue;
+    forsj(i, n) {
+      int ss = prefixSum[j];
+      if (ss - arr[i] == arr[i])
+        cc++;
+    }
+  }
+  cout << cc << endl;
+}
 
 int main() {
   OS;
   int n = 1;
-  // cin >> n;
+  cin >> n;
 
   while (n--) {
     solve();

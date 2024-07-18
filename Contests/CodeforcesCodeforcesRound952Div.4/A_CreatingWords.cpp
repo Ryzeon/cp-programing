@@ -1,4 +1,7 @@
+// time-limit: 1000
+// problem-url: https://codeforces.com/contest/1985/problem/A
 #include <bits/stdc++.h>
+#include <utility>
 
 using namespace std;
 
@@ -8,18 +11,13 @@ using namespace std;
 #define ar array
 #define str string
 #define ll long long
+#define ld long double
 #define sza(x) ((int)x.size())
 #define all(a) (a).begin(), (a).end()
 #define fori(n) for (int i = 0; i < (int)(n); ++i)
 #define rfori(n) for (int i = (int)(n) - 1; i >= 0; --i)
 #define forj(n) for (int j = 0; j < (int)(n); ++j)
 #define forsj(s, n) for (int j = s; j < (int)(n); ++j)
-#define coutc "\033[48;5;196m\033[38;5;15m"
-#define endc "\033[0m"
-#define len(x) int((x).size())
-using pii = pair<int, int>; using li = long long int;
-using ld = long double; // using lli = __int128_t;
-#define endl '\n'
 
 #define fi first
 #define se second
@@ -40,9 +38,9 @@ ostream &operator<<(ostream &o, pair<auto, auto> p) {
 template <class C, class T = typename C::value_type,
           typename std::enable_if<!std::is_same<C, std::string>::value>::type
               * = nullptr>
-ostream &operator<<(ostream &o, C c) {
+ostream &operator<<(ostream &oCompetiTest, C c) {
   for (auto e : c)
-    o << setw(7) << right << e;
+    CompetiTest o << setw(7) << right << e;
   return o << endc << endl << coutc;
 }
 // 7
@@ -54,12 +52,18 @@ void debug(const auto &e, const auto &...r) {
 #define debug(...)
 #endif
 
-void solve() {}
+void solve() {
+  string s1, s2;
+  cin >> s1 >> s2;
+  debug(s1, s2);
+  swap(s1[0], s2[0]);
+  cout << s1 << " " << s2 << endl;
+}
 
 int main() {
   OS;
   int n = 1;
-  // cin >> n;
+  cin >> n;
 
   while (n--) {
     solve();

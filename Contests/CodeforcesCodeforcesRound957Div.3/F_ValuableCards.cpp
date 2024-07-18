@@ -1,3 +1,5 @@
+// time-limit: 4000
+// problem-url: https://codeforces.com/contest/1992/problem/F
 #include <bits/stdc++.h>
 
 using namespace std;

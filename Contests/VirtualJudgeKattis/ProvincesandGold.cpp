@@ -1,3 +1,5 @@
+// time-limit: 1000
+// problem-url: https://vjudge.net/problem/Kattis-provincesandgold
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -17,7 +19,8 @@ using namespace std;
 #define coutc "\033[48;5;196m\033[38;5;15m"
 #define endc "\033[0m"
 #define len(x) int((x).size())
-using pii = pair<int, int>; using li = long long int;
+using pii = pair<int, int>;
+using li = long long int;
 using ld = long double; // using lli = __int128_t;
 #define endl '\n'
 
@@ -54,7 +57,28 @@ void debug(const auto &e, const auto &...r) {
 #define debug(...)
 #endif
 
-void solve() {}
+void solve() {
+  int g, s, c;
+  cin >> g >> s >> c;
+  g *= 3;
+  s *= 2;
+
+  int cc = g + s + c;
+
+  if (cc >= 8) {
+    cout << "Province or Gold" << endl;
+  } else if (cc >= 6) {
+    cout << "Duchy or Gold" << endl;
+  } else if (cc >= 5) {
+    cout << "Duchy or Silver" << endl;
+  } else if (cc >= 3) {
+    cout << "Estate or Silver" << endl;
+  } else if (cc >= 2) {
+    cout << "Estate or Copper" << endl;
+  } else {
+    cout << "Copper" << endl;
+  }
+}
 
 int main() {
   OS;

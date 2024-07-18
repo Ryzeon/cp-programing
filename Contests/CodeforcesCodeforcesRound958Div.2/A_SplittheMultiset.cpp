@@ -1,4 +1,7 @@
+// time-limit: 1000
+// problem-url: https://codeforces.com/contest/1988/problem/A
 #include <bits/stdc++.h>
+#include <cmath>
 
 using namespace std;
 
@@ -17,7 +20,8 @@ using namespace std;
 #define coutc "\033[48;5;196m\033[38;5;15m"
 #define endc "\033[0m"
 #define len(x) int((x).size())
-using pii = pair<int, int>; using li = long long int;
+using pii = pair<int, int>;
+using li = long long int;
 using ld = long double; // using lli = __int128_t;
 #define endl '\n'
 
@@ -54,12 +58,22 @@ void debug(const auto &e, const auto &...r) {
 #define debug(...)
 #endif
 
-void solve() {}
+#include <math.h>
+void solve() {
+  int a, b;
+  cin >> a >> b;
+  a--;
+  b--;
+  int cc = ceil(static_cast<double>(a) / b);
+  cout << cc << endl;
+
+  //  cout << "b: " << b << " - " << "a: " << a << endl;
+}
 
 int main() {
   OS;
   int n = 1;
-  // cin >> n;
+  cin >> n;
 
   while (n--) {
     solve();

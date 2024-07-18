@@ -1,3 +1,5 @@
+// time-limit: 1000
+// problem-url: https://vjudge.net/problem/HackerRank-minimum-loss
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -17,7 +19,8 @@ using namespace std;
 #define coutc "\033[48;5;196m\033[38;5;15m"
 #define endc "\033[0m"
 #define len(x) int((x).size())
-using pii = pair<int, int>; using li = long long int;
+using pii = pair<int, int>;
+using li = long long int;
 using ld = long double; // using lli = __int128_t;
 #define endl '\n'
 
@@ -54,7 +57,27 @@ void debug(const auto &e, const auto &...r) {
 #define debug(...)
 #endif
 
-void solve() {}
+void solve() {
+  ll n;
+  cin >> n;
+  vector<ll> p(n);
+  for (ll &a : p)
+    cin >> a;
+  map<ll, ll> mp;
+  fori(n) { mp[p[i]] = i; }
+  sort(p.begin(), p.end());
+
+  ll cc = 1e9;
+  for (int i = 1; i < n; i++) {
+    if (p[i] - p[i - 1] < cc) {
+      // contrains of year
+      if (mp[p[i]] > mp[p[i - 1]])
+        continue;
+      cc = min(cc, p[i] - p[i - 1]);
+    }
+  }
+  cout << cc << endl;
+}
 
 int main() {
   OS;

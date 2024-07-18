@@ -1,4 +1,7 @@
+// time-limit: 3000
+// problem-url: https://vjudge.net/problem/UVA-1124
 #include <bits/stdc++.h>
+#include <string>
 
 using namespace std;
 
@@ -17,7 +20,8 @@ using namespace std;
 #define coutc "\033[48;5;196m\033[38;5;15m"
 #define endc "\033[0m"
 #define len(x) int((x).size())
-using pii = pair<int, int>; using li = long long int;
+using pii = pair<int, int>;
+using li = long long int;
 using ld = long double; // using lli = __int128_t;
 #define endl '\n'
 
@@ -54,7 +58,12 @@ void debug(const auto &e, const auto &...r) {
 #define debug(...)
 #endif
 
-void solve() {}
+void solve() {
+  str s;
+  while (getline(cin, s)) {
+    cout << s << endl;
+  }
+}
 
 int main() {
   OS;

@@ -1,3 +1,5 @@
+// time-limit: 3000
+// problem-url: https://vjudge.net/problem/UVA-12250
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -17,7 +19,8 @@ using namespace std;
 #define coutc "\033[48;5;196m\033[38;5;15m"
 #define endc "\033[0m"
 #define len(x) int((x).size())
-using pii = pair<int, int>; using li = long long int;
+using pii = pair<int, int>;
+using li = long long int;
 using ld = long double; // using lli = __int128_t;
 #define endl '\n'
 
@@ -54,7 +57,29 @@ void debug(const auto &e, const auto &...r) {
 #define debug(...)
 #endif
 
-void solve() {}
+void solve() {
+  str s;
+  int c = 1;
+  map<str, str> xd;
+  xd["HELLO"] = "ENGLISH\n";
+  xd["HOLA"] = "SPANISH\n";
+  xd["HALLO"] = "GERMAN\n";
+  xd["BONJOUR"] = "FRENCH\n";
+  xd["CIAO"] = "ITALIAN\n";
+  xd["ZDRAVSTVUJTE"] = "RUSSIAN\n";
+  while (cin >> s) {
+    if (s == "#")
+      break;
+    str r = "";
+    if (xd.find(s) != xd.end()) {
+      r = xd[s];
+    } else {
+      r = "UNKNOWN\n";
+    }
+    cout << "Case " << c << ": " << r;
+    c++;
+  }
+}
 
 int main() {
   OS;

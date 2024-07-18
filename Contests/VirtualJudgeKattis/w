@@ -1,3 +1,5 @@
+// time-limit: 1000
+// problem-url: https://vjudge.net/problem/Kattis-judgingmoose
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -17,7 +19,8 @@ using namespace std;
 #define coutc "\033[48;5;196m\033[38;5;15m"
 #define endc "\033[0m"
 #define len(x) int((x).size())
-using pii = pair<int, int>; using li = long long int;
+using pii = pair<int, int>;
+using li = long long int;
 using ld = long double; // using lli = __int128_t;
 #define endl '\n'
 
@@ -54,7 +57,19 @@ void debug(const auto &e, const auto &...r) {
 #define debug(...)
 #endif
 
-void solve() {}
+void solve() {
+  int l, r;
+  cin >> l >> r;
+  int cc = l + r;
+  if (l + r == 0) {
+    cout << "Not a moose" << endl;
+  } else if (l == r) {
+    cout << "Even " << cc << endl;
+  } else {
+    cc = max(l, r);
+    cout << "Odd " << cc * 2 << endl;
+  }
+}
 
 int main() {
   OS;

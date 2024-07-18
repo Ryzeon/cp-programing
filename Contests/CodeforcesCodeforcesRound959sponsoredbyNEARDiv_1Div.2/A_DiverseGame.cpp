@@ -1,4 +1,13 @@
+// time-limit: 1000
+// problem-url: https://codeforces.com/contest/1994/problem/A
+#include <algorithm>
 #include <bits/stdc++.h>
+#include <csignal>
+#include <cstdio>
+#include <iostream>
+#include <ostream>
+#include <unistd.h>
+#include <vector>
 
 using namespace std;
 
@@ -17,7 +26,8 @@ using namespace std;
 #define coutc "\033[48;5;196m\033[38;5;15m"
 #define endc "\033[0m"
 #define len(x) int((x).size())
-using pii = pair<int, int>; using li = long long int;
+using pii = pair<int, int>;
+using li = long long int;
 using ld = long double; // using lli = __int128_t;
 #define endl '\n'
 
@@ -54,12 +64,61 @@ void debug(const auto &e, const auto &...r) {
 #define debug(...)
 #endif
 
-void solve() {}
+void solve() {
+  int n, m;
+  cin >> n >> m;
+  int ma[n][m];
+  vector<int> nm;
+  fori(n) {
+    forj(m) {
+      cin >> ma[i][j];
+      nm.push_back(ma[i][j]);
+    }
+  }
+
+  if (n == 1 && m == 1) {
+    cout << -1 << endl;
+    return;
+  }
+
+  rotate(nm.begin(), nm.begin() + 1, nm.end());
+
+  bool ok = true;
+
+  vector<vector<int>> out(n, vector<int>(m));
+
+  int cc = 0;
+  fori(n) {
+    forj(m) {
+      out[i][j] = nm[cc];
+      if (nm[cc] == ma[i][j]) {
+        ok = false;
+        break;
+      }
+      cc++;
+    }
+    if (!ok) {
+      break;
+    }
+  }
+
+  if (!ok) {
+    cout << -1 << endl;
+    return;
+  }
+
+  for (auto &ga : out) {
+    for (int x : ga) {
+      cout << x << " ";
+    }
+    cout << endl;
+  }
+}
 
 int main() {
   OS;
   int n = 1;
-  // cin >> n;
+  cin >> n;
 
   while (n--) {
     solve();

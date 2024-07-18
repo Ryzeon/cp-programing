@@ -1,3 +1,5 @@
+// time-limit: 2000
+// problem-url: https://codeforces.com/contest/1985/problem/H2
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -8,18 +10,13 @@ using namespace std;
 #define ar array
 #define str string
 #define ll long long
+#define ld long double
 #define sza(x) ((int)x.size())
 #define all(a) (a).begin(), (a).end()
 #define fori(n) for (int i = 0; i < (int)(n); ++i)
 #define rfori(n) for (int i = (int)(n) - 1; i >= 0; --i)
 #define forj(n) for (int j = 0; j < (int)(n); ++j)
 #define forsj(s, n) for (int j = s; j < (int)(n); ++j)
-#define coutc "\033[48;5;196m\033[38;5;15m"
-#define endc "\033[0m"
-#define len(x) int((x).size())
-using pii = pair<int, int>; using li = long long int;
-using ld = long double; // using lli = __int128_t;
-#define endl '\n'
 
 #define fi first
 #define se second

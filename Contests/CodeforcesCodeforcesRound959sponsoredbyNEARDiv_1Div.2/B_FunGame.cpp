@@ -1,3 +1,5 @@
+// time-limit: 1000
+// problem-url: https://codeforces.com/contest/1994/problem/B
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -17,7 +19,8 @@ using namespace std;
 #define coutc "\033[48;5;196m\033[38;5;15m"
 #define endc "\033[0m"
 #define len(x) int((x).size())
-using pii = pair<int, int>; using li = long long int;
+using pii = pair<int, int>;
+using li = long long int;
 using ld = long double; // using lli = __int128_t;
 #define endl '\n'
 
@@ -54,12 +57,23 @@ void debug(const auto &e, const auto &...r) {
 #define debug(...)
 #endif
 
-void solve() {}
+void solve() {
+  int n;
+  cin >> n;
+  str s, ss;
+  cin >> s >> ss;
+  bool ok = true;
+  fori(n) {
+    if (s[i] == '0' && s[i] == '1')
+      break;
+  }
+  cout << (ok ? "YES" : "NO") << endl;
+}
 
 int main() {
   OS;
   int n = 1;
-  // cin >> n;
+  cin >> n;
 
   while (n--) {
     solve();
